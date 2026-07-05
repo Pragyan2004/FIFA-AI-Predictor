@@ -18,13 +18,13 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the application code into the container
 COPY . .
 
-# Expose port 5000 for the Flask application
-EXPOSE 5000
+# Expose port 7860 for Hugging Face Spaces
+EXPOSE 7860
 
 # Define environment variables
 ENV FLASK_APP=app.py
 ENV FLASK_ENV=production
 ENV PYTHONUNBUFFERED=1
 
-# Command to run the application
-CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
+# Command to run the application on port 7860
+CMD ["flask", "run", "--host=0.0.0.0", "--port=7860"]
