@@ -1,18 +1,32 @@
-# FIFA World Cup 2026 AI Predictor
+---
+title: FIFA World Cup 2026 AI Predictor
+emoji: ⚽
+colorFrom: blue
+colorTo: pink
+sdk: docker
+app_port: 5000
+pinned: false
+license: mit
+---
 
-An enterprise-grade AI football analytics platform. This platform uses machine learning pipelines (LangChain & Groq LLMs) and live data (via worldcup26.ir REST API) to deliver unparalleled match forecasting, live tracking, and sports analytics.
+# 🏆 FIFA World Cup 2026 AI Predictor
 
-## Features
-- **Live Match Center**: Real-time scores and tournament tracking via official broadcasting endpoints.
-- **AI Analytics Dashboard**: View live model confidence, value betting alerts, and Expected Golden Boot projections.
-- **AI Match Prediction**: Run simulated matchups between countries using LLM-driven analytics and historical head-to-head metrics.
-- **Enterprise UI**: Modern, glassmorphic dashboard interface fully responsive on mobile and desktop.
+**Enterprise-grade FIFA World Cup 2026 AI analytics platform. Harness live API data and machine learning to simulate matches, forecast Golden Boot winners, and surface real-time tactical value bets.**
 
-## Prerequisites
-- Python 3.9+
-- A [Groq API Key](https://console.groq.com/) for the AI prediction engine.
+## 📊 Model & Application Details
+- **Architecture:** Flask (Python backend) with Tailwind CSS (Frontend)
+- **AI/ML Engine:** LangChain orchestration with Groq's LLaMA-3 (70B) for high-speed tactical simulations.
+- **Data Source:** Integration with the open-source `worldcup26.ir` REST API for real-time fixtures, team stats, and match progress.
+- **Deployment:** Containerized via Docker for seamless cloud deployment.
 
-## Installation & Local Setup
+## 🎯 Intended Use
+This platform is designed for sports analysts, fantasy football managers, and football enthusiasts to:
+1. View live match scores and tournament progression in real-time.
+2. Run AI-driven simulations of specific matches (Group Stage, Knockouts) based on historical head-to-head metrics and recent team form.
+3. Access tactical betting insights and "Upset Alerts" surfaced by our ML pipeline.
+4. Track predicted Golden Boot leaders based on Expected Goals (xG).
+
+## 🚀 Installation & Local Setup
 
 1. **Clone the repository:**
    ```bash
@@ -26,7 +40,7 @@ An enterprise-grade AI football analytics platform. This platform uses machine l
    ```
 
 3. **Configure Environment Variables:**
-   Create a `.env` file in the root directory and add your Groq API key:
+   Create a `.env` file in the root directory and add your [Groq API key](https://console.groq.com/):
    ```env
    GROQ_API_KEY=your_api_key_here
    ```
@@ -37,9 +51,9 @@ An enterprise-grade AI football analytics platform. This platform uses machine l
    ```
    Access the web application at `http://127.0.0.1:5000`.
 
-## Docker Deployment
+## 🐳 Docker Deployment
 
-This project includes a `Dockerfile` for seamless cloud or on-premise deployment.
+This project includes a `Dockerfile` optimized for production deployment on platforms like Hugging Face Spaces, Render, or AWS.
 
 1. **Build the Docker Image:**
    ```bash
@@ -50,10 +64,14 @@ This project includes a `Dockerfile` for seamless cloud or on-premise deployment
    ```bash
    docker run -p 5000:5000 --env-file .env fifa-ai-predictor
    ```
-   Access the application at `http://localhost:5000`.
 
-## Tech Stack
-- **Backend:** Flask, Python
-- **AI/ML:** LangChain, Groq (Llama-3), Pandas
-- **Frontend:** HTML5, Tailwind CSS
-- **Data Source:** [worldcup26.ir API](https://github.com/rezarahiminia/worldcup2026)
+## ⚠️ Limitations & Bias
+- **Data Dependency:** The LLM's predictions heavily rely on the static historical CSV dataset (`archive.zip`) and dynamic updates from `worldcup26.ir`. If an underdog team rapidly improves over a few months, the historical data might lag in capturing this momentum.
+- **Hallucinations:** While the system prompt is strictly constrained to output JSON, underlying LLM generations regarding match tactical narratives can occasionally hallucinate player injuries or unverified squad inclusions. 
+- **Not Financial Advice:** The "Value Bets" and predictions provided are purely for analytical and entertainment purposes.
+
+## 🤝 Contributing
+Contributions are highly welcome! Feel free to open issues or submit pull requests for new analytical widgets, performance improvements, or UI refinements.
+
+## 📄 License
+This project is licensed under the MIT License.
