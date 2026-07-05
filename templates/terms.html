@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="w-full max-w-4xl mx-auto space-y-8 px-4 section-padding animate-fade-in text-[var(--text-primary)]">
+    <div class="text-center mb-10">
+        <h1 class="text-4xl md:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] to-[var(--primary-dark)]">Terms of Service</h1>
+        <p class="text-[var(--text-secondary)] font-medium mt-4">Last Updated: July 5, 2026</p>
+    </div>
+    <div class="card-glass p-8 space-y-6 text-sm md:text-base leading-relaxed">
+        <h2 class="text-2xl font-bold text-[var(--primary-dark)]">1. Acceptance of Terms</h2>
+        <p>By accessing and using the FIFA AI Predictor platform, you agree to comply with and be bound by these Terms of Service. If you do not agree, you must not use our services.</p>
+        
+        <h2 class="text-2xl font-bold text-[var(--primary-dark)]">2. Use of AI Predictions</h2>
+        <p>Our machine learning predictions are provided for informational and entertainment purposes only. We do not guarantee the accuracy of any sports simulation, and the data should not be used for illegal gambling or high-risk financial decisions.</p>
+        
+        <h2 class="text-2xl font-bold text-[var(--primary-dark)]">3. API Usage Limits</h2>
+        <p>Users on the Enterprise API plan must adhere to the 10,000 requests/month limit unless a custom agreement is signed. Automated abuse of the endpoints will result in immediate account termination.</p>
+        
+        <h2 class="text-2xl font-bold text-[var(--primary-dark)]">4. Intellectual Property</h2>
+        <p>All ML models, underlying algorithms, and UI designs are the exclusive property of FIFA AI Predictor Enterprise.</p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="w-full max-w-7xl mx-auto space-y-8 animate-fade-in section-padding px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Left: Match Prediction Form (2 Columns Wide on Large Screens) -->
+        <div class="lg:col-span-2">
+            <h1 class="text-4xl sm:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] to-[var(--primary-dark)] mb-4">Match Prediction Engine</h1>
+            <p class="text-[var(--text-secondary)] mb-8 font-medium">Input any two international teams to generate a highly accurate, data-driven simulation of the match outcome.</p>
+            
+            <div class="card-glass shadow-xl relative overflow-hidden mb-8">
+                <div class="absolute -right-10 -top-10 text-[var(--primary-color)] opacity-5 text-9xl">🤖</div>
+                <form id="predict-form" class="space-y-6 relative z-10" action="/prediction" method="POST">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-black text-[var(--text-primary)] mb-2 uppercase tracking-wide">Home Team</label>
+                            <input type="text" name="team_a" class="w-full bg-[var(--background-light)] border border-[var(--border-color)] text-[var(--text-primary)] rounded-xl p-4 focus:outline-none focus:border-[var(--primary-color)] transition shadow-sm font-bold" placeholder="e.g. Argentina" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-black text-[var(--text-primary)] mb-2 uppercase tracking-wide">Away Team</label>
+                            <input type="text" name="team_b" class="w-full bg-[var(--background-light)] border border-[var(--border-color)] text-[var(--text-primary)] rounded-xl p-4 focus:outline-none focus:border-[var(--primary-color)] transition shadow-sm font-bold" placeholder="e.g. France" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-black text-[var(--text-primary)] mb-2 uppercase tracking-wide">Tournament Stage</label>
+                        <select name="stage" class="w-full bg-[var(--background-light)] border border-[var(--border-color)] text-[var(--text-primary)] rounded-xl p-4 focus:outline-none focus:border-[var(--primary-color)] transition shadow-sm font-bold">
+                            <option>Group Stage</option>
+                            <option>Round of 16</option>
+                            <option>Quarter Final</option>
+                            <option>Semi Final</option>
+                            <option>Final</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full btn-enterprise py-4 text-lg mt-4 shadow-lg">Initialize Simulation</button>
+                </form>
+            </div>
+            
+            {% if result %}
+            <div class="card-glass border-l-8 border-l-[var(--success-color)] shadow-2xl p-8 mb-8 animate-fade-in bg-gradient-to-r from-white to-[var(--background-light)]">
+                <h3 class="text-3xl font-black text-[var(--text-primary)] mb-6 uppercase">Simulation Results</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-sm font-bold text-[var(--text-secondary)] uppercase tracking-widest">Predicted Winner</p>
+                        <p class="text-4xl font-black text-[var(--primary-color)] mt-2">{{ result.predicted_winner }}</p>
+                    </div>
+                    <div>
+                        <p class="text-sm font-bold text-[var(--text-secondary)] uppercase tracking-widest">AI Confidence</p>
+                        <p class="text-4xl font-black text-[var(--success-color)] mt-2">{{ result.confidence_percentage }}%</p>
+                    </div>
+                </div>
+                <div class="mt-8 border-t border-[var(--border-color)] pt-6">
+                    <p class="text-sm font-bold text-[var(--text-secondary)] uppercase tracking-widest mb-2">Key Tactical Reasoning</p>
+                    <p class="text-[var(--text-primary)] font-medium leading-relaxed">{{ result.key_reasoning }}</p>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if error %}
+            <div class="p-6 bg-[var(--danger-color)]/10 border border-[var(--danger-color)] text-[var(--danger-color)] rounded-xl font-bold mt-4 shadow-md">
+                Error during simulation: {{ error }}
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Right: Upcoming Matches from FIFA Site Mockup -->
+        <div class="lg:col-span-1">
+            <div class="card-glass p-0 overflow-hidden shadow-lg border border-[var(--border-color)]">
+                <div class="bg-[var(--text-primary)] p-4 border-b border-[var(--border-color)] flex justify-between items-center">
+                    <h3 class="text-lg font-black text-white tracking-widest">UPCOMING MATCHES</h3>
+                    <span class="text-xs font-bold bg-white text-[var(--text-primary)] px-2 py-1 rounded">FIFA 2026</span>
+                </div>
+                <div class="p-4 space-y-4 bg-white">
+                    
+                    <!-- Match 1 -->
+                    <div class="border border-[var(--border-color)] rounded-xl p-4 hover:border-[var(--primary-color)] hover:shadow-md transition cursor-pointer">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xs font-black text-[var(--primary-color)] uppercase bg-[var(--primary-color)]/10 px-2 py-1 rounded">June 11, 2026</span>
+                            <span class="text-xs font-bold text-[var(--text-secondary)]">20:00 UTC</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-2">
+                                <span class="font-black text-[var(--text-primary)]">USA</span>
+                            </div>
+                            <span class="text-[var(--text-secondary)] font-bold text-xs">vs</span>
+                            <div class="flex items-center gap-2">
+                                <span class="font-black text-[var(--text-primary)]">WAL</span>
+                            </div>
+                        </div>
+                        <button onclick="autoPredict('United States', 'Wales')" class="w-full mt-4 py-2 bg-[var(--background-light)] text-[var(--text-primary)] text-xs font-bold rounded-lg border border-[var(--border-color)] hover:bg-[var(--primary-color)] hover:text-white hover:border-transparent transition">Predict This Match</button>
+                    </div>
+
+                    <!-- Match 2 -->
+                    <div class="border border-[var(--border-color)] rounded-xl p-4 hover:border-[var(--primary-color)] hover:shadow-md transition cursor-pointer">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xs font-black text-[var(--primary-color)] uppercase bg-[var(--primary-color)]/10 px-2 py-1 rounded">June 12, 2026</span>
+                            <span class="text-xs font-bold text-[var(--text-secondary)]">16:00 UTC</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-2">
+                                <span class="font-black text-[var(--text-primary)]">MEX</span>
+                            </div>
+                            <span class="text-[var(--text-secondary)] font-bold text-xs">vs</span>
+                            <div class="flex items-center gap-2">
+                                <span class="font-black text-[var(--text-primary)]">POL</span>
+                            </div>
+                        </div>
+                        <button onclick="autoPredict('Mexico', 'Poland')" class="w-full mt-4 py-2 bg-[var(--background-light)] text-[var(--text-primary)] text-xs font-bold rounded-lg border border-[var(--border-color)] hover:bg-[var(--primary-color)] hover:text-white hover:border-transparent transition">Predict This Match</button>
+                    </div>
+
+                    <!-- Match 3 -->
+                    <div class="border border-[var(--border-color)] rounded-xl p-4 hover:border-[var(--primary-color)] hover:shadow-md transition cursor-pointer">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xs font-black text-[var(--primary-color)] uppercase bg-[var(--primary-color)]/10 px-2 py-1 rounded">June 12, 2026</span>
+                            <span class="text-xs font-bold text-[var(--text-secondary)]">22:00 UTC</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-2">
+                                <span class="font-black text-[var(--text-primary)]">CAN</span>
+                            </div>
+                            <span class="text-[var(--text-secondary)] font-bold text-xs">vs</span>
+                            <div class="flex items-center gap-2">
+                                <span class="font-black text-[var(--text-primary)]">MAR</span>
+                            </div>
+                        </div>
+                        <button onclick="autoPredict('Canada', 'Morocco')" class="w-full mt-4 py-2 bg-[var(--background-light)] text-[var(--text-primary)] text-xs font-bold rounded-lg border border-[var(--border-color)] hover:bg-[var(--primary-color)] hover:text-white hover:border-transparent transition">Predict This Match</button>
+                    </div>
+                </div>
+                <div class="p-3 bg-[var(--background-light)] border-t border-[var(--border-color)] text-center">
+                    <a href="#" class="text-xs font-bold text-[var(--primary-color)]">View Full Schedule &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function autoPredict(teamA, teamB) {
+        document.querySelector('input[name="team_a"]').value = teamA;
+        document.querySelector('input[name="team_b"]').value = teamB;
+        document.getElementById('predict-form').submit();
+    }
+</script>
+{% endblock %}

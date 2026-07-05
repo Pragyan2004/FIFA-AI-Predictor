@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIFA AI Predictor 2026 - Enterprise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=Poppins:wght@400;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: var(--background-light); color: var(--text-primary); overflow-x: hidden;}
+        .glass { background: var(--background-card); backdrop-filter: var(--glass-blur); border-bottom: 1px solid var(--border-color); }
+        .nav-link { transition: all 0.3s ease; }
+        .nav-link:hover { color: var(--primary-color); }
+        /* Hide scrollbar for mobile nav */
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/design-system.css') }}">
+</head>
+<body class="min-h-screen flex flex-col relative">
+
+    <!-- Global Background Watermark Animation -->
+    <div class="watermark-container animate-watermark">
+        FIFA 2026
+    </div>
+
+    <!-- Header -->
+    <header class="glass sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3 md:py-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4">
+                <div class="flex items-center w-full md:w-auto justify-center md:justify-start">
+                    <a href="/" class="text-2xl font-black bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] to-[var(--primary-dark)]">FIFA AI Predictor</a>
+                </div>
+                <nav class="flex w-full md:w-auto overflow-x-auto space-x-6 text-sm pb-1 md:pb-0 scrollbar-hide text-[var(--text-secondary)] font-bold px-2 justify-start md:justify-end">
+                    <a href="/" class="nav-link whitespace-nowrap">Home</a>
+                    <a href="/dashboard" class="nav-link whitespace-nowrap">Dashboard</a>
+                    <a href="/prediction" class="nav-link whitespace-nowrap">AI Prediction</a>
+                    <a href="/live" class="nav-link whitespace-nowrap">Live</a>
+                    <a href="/fantasy" class="nav-link whitespace-nowrap">Fantasy</a>
+                    <a href="/contact" class="nav-link whitespace-nowrap">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col relative z-10 w-full">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Enterprise Footer -->
+    <footer class="bg-[var(--background-dark)] border-t border-[var(--border-color)] mt-auto pt-16 pb-8 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 sm:col-span-2 md:col-span-1">
+                    <h2 class="text-2xl font-black bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] to-[var(--primary-dark)] mb-4">FIFA AI Predictor</h2>
+                    <p class="text-[var(--text-secondary)] text-sm mb-6">The world's most advanced AI-driven sports analytics platform. Simulating matches with advanced machine learning ensembles.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://twitter.com/FIFAAI" target="_blank" class="text-[var(--text-secondary)] hover:text-[#1DA1F2] transition transform hover:scale-110"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+                        <a href="https://github.com/Pragyan2004" target="_blank" class="text-[var(--text-secondary)] hover:text-slate-800 transition transform hover:scale-110"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-[var(--text-primary)] font-bold mb-4 uppercase tracking-wider text-sm">Platform</h3>
+                    <ul class="space-y-2 text-[var(--text-secondary)] text-sm font-semibold">
+                        <li><a href="/dashboard" class="hover:text-[var(--primary-color)] transition">Analytics Dashboard</a></li>
+                        <li><a href="/live" class="hover:text-[var(--primary-color)] transition">Live Match Center</a></li>
+                        <li><a href="/prediction" class="hover:text-[var(--primary-color)] transition">Run Simulation</a></li>
+                        <li><a href="/fantasy" class="hover:text-[var(--primary-color)] transition">Fantasy Optimizer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-[var(--text-primary)] font-bold mb-4 uppercase tracking-wider text-sm">Resources</h3>
+                    <ul class="space-y-2 text-[var(--text-secondary)] text-sm font-semibold">
+                        <li><a href="https://github.com/Pragyan2004" target="_blank" class="hover:text-[var(--primary-color)] transition flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> GitHub Repository</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-[var(--text-primary)] font-bold mb-4 uppercase tracking-wider text-sm">Legal</h3>
+                    <ul class="space-y-2 text-[var(--text-secondary)] text-sm font-semibold">
+                        <li><a href="/privacy" class="hover:text-[var(--primary-color)] transition">Privacy Policy (GDPR)</a></li>
+                        <li><a href="/terms" class="hover:text-[var(--primary-color)] transition">Terms of Service</a></li>
+                        <li><a href="/cookie" class="hover:text-[var(--primary-color)] transition">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-[var(--border-color)] pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-[var(--text-secondary)] font-semibold">
+                <p>&copy; 2026 FIFA AI Predictor Enterprise. All rights reserved.</p>
+                <p class="mt-4 md:mt-0">Built with <span class="text-[var(--danger-color)]">❤</span> and AI.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Phase 5: Cookie Consent Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 glass border-t border-[var(--border-color)] p-4 z-50 transform translate-y-0 transition-transform duration-500 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p class="text-sm text-[var(--text-secondary)] font-semibold text-center sm:text-left">We use cookies to enhance your experience and analyze our traffic. By clicking "Accept", you consent to our use of cookies in accordance with GDPR regulations.</p>
+            <div class="flex gap-4 whitespace-nowrap">
+                <button onclick="document.getElementById('cookie-banner').style.display='none'" class="px-6 py-2 text-sm text-[var(--text-secondary)] font-bold hover:text-[var(--text-primary)] transition">Decline</button>
+                <button onclick="document.getElementById('cookie-banner').style.display='none'" class="px-6 py-2 text-sm btn-enterprise rounded-lg font-bold">Accept All</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

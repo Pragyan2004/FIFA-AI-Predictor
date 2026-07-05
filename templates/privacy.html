@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="w-full max-w-4xl mx-auto space-y-8 px-4 section-padding animate-fade-in text-[var(--text-primary)]">
+    <div class="text-center mb-10">
+        <h1 class="text-4xl md:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] to-[var(--primary-dark)]">Privacy Policy (GDPR)</h1>
+        <p class="text-[var(--text-secondary)] font-medium mt-4">Effective Date: July 5, 2026</p>
+    </div>
+    <div class="card-glass p-8 space-y-6 text-sm md:text-base leading-relaxed">
+        <h2 class="text-2xl font-bold text-[var(--primary-dark)]">1. Information We Collect</h2>
+        <p>At FIFA AI Predictor Enterprise, we are committed to protecting your privacy. We collect data necessary to provide our AI sports analytics services, including account details, prediction history, and usage metrics.</p>
+        
+        <h2 class="text-2xl font-bold text-[var(--primary-dark)]">2. How We Use Your Data</h2>
+        <p>Your data is used strictly for personalizing your dashboard, optimizing our ML pipelines, and securing your account. We do not sell your personal data to third parties.</p>
+        
+        <h2 class="text-2xl font-bold text-[var(--primary-dark)]">3. GDPR Rights</h2>
+        <p>Under the General Data Protection Regulation (GDPR), you have the right to access, rectify, or erase your personal data at any time. To exercise these rights, please visit our <a href="/contact" class="text-[var(--primary-color)] font-bold">Contact Page</a>.</p>
+        
+        <h2 class="text-2xl font-bold text-[var(--primary-dark)]">4. Data Security</h2>
+        <p>We employ industry-standard encryption protocols (SSL/TLS) and secure database architectures to ensure your information remains confidential and protected against unauthorized access.</p>
+    </div>
+</div>
+{% endblock %}

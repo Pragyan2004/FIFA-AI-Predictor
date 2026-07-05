@@ -1,0 +1,22 @@
+:root {
+  --primary-color: #0284c7; /* Vibrant Sky Blue */
+  --primary-dark: #0369a1; /* Deep Sky Blue */
+  --secondary-color: #ea580c; /* Vibrant Orange */
+  --accent-color: #db2777; /* Vibrant Pink */
+  
+  --background-light: #f1f5f9; /* Slate 100 for overall background */
+  --background-card: rgba(255, 255, 255, 0.9); /* Pure white glass */
+  --background-dark: #ffffff; /* Footer and dark areas mapped to white */
+  
+  --text-primary: #0f172a; /* Slate 900 for high contrast */
+  --text-secondary: #475569; /* Slate 600 */
+  --text-inverse: #ffffff; /* White text for buttons/gradients */
+  
+  --border-color: rgba(2, 132, 199, 0.15); /* Light blue borders */
+  
+  --success-color: #10b981; /* Emerald */
+  --danger-color: #e11d48; /* Rose */
+  
+  --glass-shadow: 0 10px 40px -10px rgba(2, 132, 199, 0.15);
+  --glass-blur: blur(16px);
+}

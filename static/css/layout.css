@@ -1,0 +1,15 @@
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.container-enterprise {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.grid-enterprise {
+  display: grid;
+  gap: 2rem;
+}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="w-full max-w-4xl mx-auto space-y-8 px-4 section-padding animate-fade-in text-[var(--text-primary)]">
+    <div class="text-center mb-10">
+        <h1 class="text-4xl md:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] to-[var(--primary-dark)]">Cookie Policy</h1>
+        <p class="text-[var(--text-secondary)] font-medium mt-4">We use cookies to improve your experience.</p>
+    </div>
+    <div class="card-glass p-8 space-y-6 text-sm md:text-base leading-relaxed">
+        <h2 class="text-2xl font-bold text-[var(--primary-dark)]">1. What Are Cookies?</h2>
+        <p>Cookies are small text files stored on your device when you visit our website. They help us recognize your device and remember your preferences and session data.</p>
+        
+        <h2 class="text-2xl font-bold text-[var(--primary-dark)]">2. Types of Cookies We Use</h2>
+        <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Essential Cookies:</strong> Required for the platform to function securely (e.g., login sessions).</li>
+            <li><strong>Analytics Cookies:</strong> Help us understand how users interact with the dashboard to improve UI/UX.</li>
+            <li><strong>Preference Cookies:</strong> Remember your settings, such as your preferred tournament view or selected timezone.</li>
+        </ul>
+        
+        <h2 class="text-2xl font-bold text-[var(--primary-dark)]">3. Managing Cookies</h2>
+        <p>You can control and manage cookies through your browser settings. However, disabling essential cookies may severely impact your ability to use the AI prediction tools.</p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="w-full max-w-7xl mx-auto space-y-8 px-4 section-padding animate-fade-in">
+    <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-6xl font-black bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-color)] to-[var(--primary-dark)] mb-4">Get in Touch</h1>
+        <p class="text-lg text-[var(--text-secondary)] font-medium max-w-2xl mx-auto">Have questions about our AI models or enterprise API access? Reach out to our global team.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-[var(--border-color)]">
+        <!-- Contact Info & Mumbai Location -->
+        <div class="space-y-8">
+            <div>
+                <h3 class="text-2xl font-black text-[var(--text-primary)] mb-6">Global Headquarters</h3>
+                <div class="card-glass bg-[var(--background-light)] border-l-4 border-l-[var(--primary-color)] p-6 shadow-sm mb-6">
+                    <h4 class="text-lg font-bold text-[var(--text-primary)] mb-2 flex items-center gap-2"><span class="text-2xl">🇮🇳</span> Mumbai Office</h4>
+                    <p class="text-[var(--text-secondary)] font-medium leading-relaxed">
+                        FIFA AI Predictor Enterprise<br>
+                        Bandra Kurla Complex (BKC)<br>
+                        Mumbai, Maharashtra 400051<br>
+                        India
+                    </p>
+                    <p class="mt-4 text-[var(--primary-dark)] font-bold">+91 22 1234 5678</p>
+                </div>
+                <!-- Google Maps Embed for BKC, Mumbai -->
+                <div class="rounded-xl overflow-hidden shadow-sm border border-[var(--border-color)]">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15083.743900989395!2d72.85244983050417!3d19.0665306616428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8df0b73c9f1%3A0xc665b16f1947a505!2sBandra%20Kurla%20Complex%2C%20Bandra%20East%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1719586145321!5m2!1sen!2sin" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-6">
+                <div class="p-6 bg-[var(--background-light)] rounded-xl text-center border border-[var(--border-color)] hover:border-[var(--primary-color)] transition-all hover:shadow-md cursor-pointer group">
+                    <div class="text-3xl mb-3 group-hover:scale-110 transition-transform">✉️</div>
+                    <h5 class="font-bold text-[var(--text-primary)]">Email</h5>
+                    <p class="text-sm text-[var(--text-secondary)] mt-1">support@fifaai.com</p>
+                </div>
+                <div class="p-6 bg-[var(--background-light)] rounded-xl text-center border border-[var(--border-color)] hover:border-[var(--primary-color)] transition-all hover:shadow-md cursor-pointer group">
+                    <div class="text-3xl mb-3 group-hover:scale-110 transition-transform">💬</div>
+                    <h5 class="font-bold text-[var(--text-primary)]">Live Chat</h5>
+                    <p class="text-sm text-[var(--text-secondary)] mt-1">Available 24/7</p>
+                </div>
+                
+                <!-- Social Links -->
+                <a href="https://twitter.com/FIFAAI" target="_blank" class="p-6 bg-[var(--background-light)] rounded-xl text-center border border-[var(--border-color)] hover:border-[#1DA1F2] transition-all hover:shadow-md group block">
+                    <div class="text-3xl mb-3 group-hover:scale-110 transition-transform text-[#1DA1F2] flex justify-center">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                    </div>
+                    <h5 class="font-bold text-[var(--text-primary)]">Twitter / X</h5>
+                    <p class="text-sm text-[var(--text-secondary)] mt-1">@FIFAAI</p>
+                </a>
+                
+                <a href="https://github.com/Pragyan2004" target="_blank" class="p-6 bg-[var(--background-light)] rounded-xl text-center border border-[var(--border-color)] hover:border-slate-800 transition-all hover:shadow-md group block">
+                    <div class="text-3xl mb-3 group-hover:scale-110 transition-transform text-slate-800 flex justify-center">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </div>
+                    <h5 class="font-bold text-[var(--text-primary)]">GitHub</h5>
+                    <p class="text-sm text-[var(--text-secondary)] mt-1">@Pragyan2004</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="card-glass border-none shadow-none bg-transparent p-0 flex flex-col h-full">
+            <h3 class="text-2xl font-black text-[var(--text-primary)] mb-6">Send us a Message</h3>
+            <form class="flex flex-col h-full space-y-6 flex-grow">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-bold text-[var(--text-primary)] mb-2">First Name</label>
+                        <input type="text" class="w-full bg-[var(--background-light)] border border-[var(--border-color)] rounded-xl p-3 focus:outline-none focus:border-[var(--primary-color)]" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-[var(--text-primary)] mb-2">Last Name</label>
+                        <input type="text" class="w-full bg-[var(--background-light)] border border-[var(--border-color)] rounded-xl p-3 focus:outline-none focus:border-[var(--primary-color)]" required>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-[var(--text-primary)] mb-2">Email Address</label>
+                    <input type="email" class="w-full bg-[var(--background-light)] border border-[var(--border-color)] rounded-xl p-3 focus:outline-none focus:border-[var(--primary-color)]" required>
+                </div>
+                <div class="flex-grow flex flex-col">
+                    <label class="block text-sm font-bold text-[var(--text-primary)] mb-2">Message</label>
+                    <textarea class="w-full flex-grow min-h-[150px] bg-[var(--background-light)] border border-[var(--border-color)] rounded-xl p-3 focus:outline-none focus:border-[var(--primary-color)] resize-none" required></textarea>
+                </div>
+                <button type="submit" class="w-full btn-enterprise py-4 text-lg mt-auto">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+@import 'variables.css';
+@import 'animations.css';
+@import 'layout.css';
+@import 'components.css';
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.025em;
+}
